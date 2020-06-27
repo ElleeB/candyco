@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="column" style="margin-left: 10px; padding-right: 15px; float: left; width: 15%; text-align: right; border-right: 1px solid;">
+    <h2>DAILY REPORT</h2>
+    <button id="generate_order"> Generate Order </button>
+    <hr>
+    <h4> Total Orders: </h4>
+    <h3 id="total-orders"></h3>
+    <h4> Total Sold Product: </h4>
+    <h3 id="total-sold"></h3>
+    <h4> Gross Sales: </h4>
+    <h3 id="gross-sales"></h3>
+    <hr>
+    <h4> Average Products per Order: </h4>
+    <h3 id="product-count-average"></h3>
+    <h4> Average Order Value: </h4>
+    <h3 id="average-order-value"></h3>
+    <hr>
+    <button id="clear_all"> Clear Report </button>
+  </div>
+
+  <div class="column" style=" margin-left: 10px; padding-left: 15px; float: left; width: 50%; border-left: 2px solid;">
+    <div id="warehouses-list">
+      <% @warehouses.each do |warehouse| %>
+        <hr>
+        <h3><%= "#{warehouse.id}. #{warehouse.name.upcase}" %></h3>
+        <div id="warehouse-<%= warehouse.id %>"></div>
+      <% end %>
+    </div>
+  </div>
+</div>
